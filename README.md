@@ -8,6 +8,12 @@ Criar uma aplicação que permita a qualquer pessoa explicar um problema em ling
 
 A aplicação não deve ser apenas um chatbot com personagens diferentes: deve combinar triagem de necessidades, seleção transparente de especialistas, conversa contextual, planos de ação e encaminhamento responsável quando a situação ultrapassar as capacidades do sistema.
 
+## Regra transversal dos especialistas virtuais
+
+Todos os especialistas, atuais e futuros, são agentes virtuais alimentados por inteligência artificial e devem ser concebidos e avaliados segundo o padrão interno **«PhD máximo»** da sua especialidade. Esta expressão significa um objetivo de excelência técnica, profundidade e rigor; não é uma credencial académica literal nem autoriza alegações de doutoramento, licença profissional ou infalibilidade. A publicação de cada agente depende de critérios de qualidade, testes e salvaguardas próprios do domínio.
+
+Carta normativa: [CPE-001 — Especialistas Virtuais de IA](GOVERNANCA/CARTA_CPE-001_ESPECIALISTAS_VIRTUAIS_IA.md).
+
 ## 2. Princípios fundamentais
 
 - **Acesso simples:** começar pelo problema descrito pela pessoa, não obrigá-la a conhecer o nome da profissão certa.

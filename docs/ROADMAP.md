@@ -1,5 +1,28 @@
 # Roadmap inicial
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-ROADMAP-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | PLANO |
+| **Fase** | FASE_0_FUNDAMENTOS |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 054b2e46bebc5a6053515bb9545f0560a7012be371b628ca07fa3a05e23764fd |
+| **Commit de referência (versão anterior)** | [2be14310487e0c0b0072925e7be5608f2454c523](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/2be14310487e0c0b0072925e7be5608f2454c523) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
+| **Origem** | Revisão documental do projeto; roadmap existente no repositório |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; referências e evidências indicadas no corpo documental |
+| **Escopo** | Conforme definido no corpo documental |
+| **Objetivo** | Conforme definido no corpo documental |
+| **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
 O roadmap define a sequência de trabalho proposta. Uma fase não é considerada concluída apenas por ter documentação: requer evidências verificáveis e critérios de aceitação.
 
 | Fase | Entrega | Critério de saída | Estado |

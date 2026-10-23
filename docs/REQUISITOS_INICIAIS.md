@@ -10,7 +10,7 @@
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.2 |
 | **SHA-256 (conteúdo canónico)** | f26b939b92bc22475abd637a1f72142cf572a516a0deae1a99e8ef3107b53f70 |
-| **Commit de referência (versão anterior)** | [f5d8936599998b68059c6c01172807c0e414f4e8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/f5d8936599998b68059c6c01172807c0e414f4e8) |
+| **Commit de referência (versão anterior)** | [16655f2cab89a8c743bad1282543a4205e408ac1](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/16655f2cab89a8c743bad1282543a4205e408ac1) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |

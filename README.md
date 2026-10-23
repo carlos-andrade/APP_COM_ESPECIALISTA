@@ -9,8 +9,8 @@
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 95d9c7a693a7dd08c3a1aa048e727233c5537e047e1adade24df7a6a4532d89e |
-| **Commit de referência (versão anterior)** | [c92edd97891bf39558897aa2a15b642f9416f950](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c92edd97891bf39558897aa2a15b642f9416f950) |
+| **SHA-256 (conteúdo canónico)** | b90170df93ab60cbd2985fa2cc208ffd3deb94a508eecf365337bc1c233f93bd |
+| **Commit de referência (versão anterior)** | [0261e8f6b206afe7a7db3f73fb982512d53a735e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/0261e8f6b206afe7a7db3f73fb982512d53a735e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -197,4 +197,5 @@ A aplicação do cabeçalho foi verificada nos seis documentos Markdown abrangid
 
 | Versão | Data | Alteração | Responsável | Evidência |
 |---|---|---|---|---|
-| 1.0.1 | 2026-10-23 | Aplicação inicial do cabeçalho canónico | Responsável do projeto | Histórico Git |\n| 1.0.2 | 2026-10-23 | Sincronização final do README após normalização e validação dos hashes dos documentos | Responsável do projeto | Commit GitHub desta atualização |
+| 1.0.1 | 2026-10-23 | Aplicação inicial do cabeçalho canónico | Responsável do projeto | Histórico Git |
+| 1.0.2 | 2026-10-23 | Sincronização final do README após normalização e validação dos hashes dos documentos | Responsável do projeto | Commit GitHub desta atualização |

@@ -8,9 +8,9 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 580a245b78455b3d4bd245824aba27ce4cddb9f04bcc10d21a65dc7a69878387 |
-| **Commit de referência (versão anterior)** | [ef24397f15427c9be9eaded75cab6ddb5f839020](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/ef24397f15427c9be9eaded75cab6ddb5f839020) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | b121760e4ceef17ee8dddfc786a78d750cd0528230092d76bda7bd2375e72730 |
+| **Commit de referência (versão anterior)** | [0fec9ba5c774be56941c9d4221a7c6f2e492f1a8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/0fec9ba5c774be56941c9d4221a7c6f2e492f1a8) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -36,6 +36,10 @@ O roadmap define a sequência de trabalho proposta. Uma fase não é considerada
 | R6 — Segurança e qualidade | Avaliações por domínio, privacidade e observabilidade | Gates de segurança e qualidade aprovados | Por iniciar |
 | R7 — Piloto | Piloto limitado e análise de resultados | Métricas analisadas e decisão documentada | Por iniciar |
 | R8 — Expansão | Mais domínios e integrações | Aprovação baseada em evidências do piloto | Por iniciar |
+
+## Trabalho adicional — memória e aprendizagem controlada
+
+Antes do piloto, definir e validar o esquema de armazenamento das interações, o sinal explícito de aceitação, a separação entre histórico privado e corpus partilhado, as regras de curadoria e a política de retenção/eliminação. Implementar testes de isolamento entre utilizadores, autorização, minimização de dados, propagação de eliminações, proveniência e regressão de qualidade. Só disponibilizar conhecimento derivado após revisão e aprovação documentadas.
 
 ## Próximo passo recomendado
 

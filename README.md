@@ -1,5 +1,28 @@
 # APP_COM_ESPECIALISTA
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-README-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | README |
+| **Fase** | FASE_0_FUNDAMENTOS |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 95d9c7a693a7dd08c3a1aa048e727233c5537e047e1adade24df7a6a4532d89e |
+| **Commit de referência (versão anterior)** | [557f2bacc41ef20999726543be4c48e955619165](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/557f2bacc41ef20999726543be4c48e955619165) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
+| **Origem** | Visão do produto e documentação inicial do projeto |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; documentos ligados neste README |
+| **Escopo** | Visão, requisitos, arquitetura, roadmap e governança inicial do projeto |
+| **Objetivo** | Descrever o produto, o estado documental e as regras de execução |
+| **Dependências** | Documentos de requisitos, arquitetura, roadmap e governança referenciados abaixo |
+
 > Um especialista para cada desafio da vida.
 
 ## 1. Visão do produto
@@ -163,3 +186,15 @@ Todas as atualizações do projeto que tenham sido validadas devem ser refletida
 **Estado:** visão e escopo inicial documentados; implementação ainda por iniciar.
 
 As decisões técnicas descritas neste documento são propostas de arquitetura. Não representam funcionalidades já implementadas ou testadas.
+
+## Validação documental do cabeçalho
+
+Os documentos Markdown iniciais do projeto foram normalizados segundo a [Norma de Cabeçalho Documental Padrão do repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md). A revisão inclui os requisitos, a arquitetura proposta, o roadmap, a carta CPE-001 e a regra de sincronização do README. Os campos SHA-256 canónico seguem a normalização UTF-8/LF e excluem do cálculo as linhas do próprio SHA-256 e do commit de referência.
+
+A aplicação do cabeçalho é uma validação estrutural/documental; não equivale à aprovação formal de todos os requisitos nem prova implementação ou testes funcionais.
+
+## Histórico de alterações
+
+| Versão | Data | Alteração | Responsável | Evidência |
+|---|---|---|---|---|
+| 1.0.1 | 2026-10-23 | Aplicação do cabeçalho canónico e sincronização da regra de governança | Responsável do projeto | Commit GitHub desta atualização |

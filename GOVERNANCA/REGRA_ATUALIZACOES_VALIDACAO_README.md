@@ -1,5 +1,28 @@
 # Regra de Governança — Atualizações Validadas e README
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-GOV-README-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | NORMA |
+| **Fase** | GOVERNANCA |
+| **Estado** | APROVADO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 3ba42d0a141adce2900d0b9db281ee8a699b250163025d0401ca8b38ed54bdcf |
+| **Commit de referência (versão anterior)** | [4183d0cd0d1aa0a97c9ec0e70017c5b7fc607d7d](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/4183d0cd0d1aa0a97c9ec0e70017c5b7fc607d7d) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Carlos Andrade — instrução explícita registada no histórico de trabalho |
+| **Origem** | Instrução explícita do responsável do projeto nesta conversa |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; referências e evidências indicadas no corpo documental |
+| **Escopo** | Conforme definido no corpo documental |
+| **Objetivo** | Conforme definido no corpo documental |
+| **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
 - **PROJETO:** APP_COM_ESPECIALISTA
 - **ID:** GOV-README-001
 - **VERSÃO:** 1.0.0

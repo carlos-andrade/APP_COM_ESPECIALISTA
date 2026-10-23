@@ -8,9 +8,9 @@
 | **Tipo documental** | CARTA |
 | **Fase** | TRANSVERSAL |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | af921391615b3dd4dd0cd4e2e4e12de5542208d086adde0de1b5ccd6ad0cb1e7 |
-| **Commit de referência (versão anterior)** | [5d090513674ae9fde8633e6b5fdc9b9698eca590](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/5d090513674ae9fde8633e6b5fdc9b9698eca590) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 3bc20b2ab0ed7387f5fd4cc800e9751a15f597178969a8ad5cabf214f07fb5d3 |
+| **Commit de referência (versão anterior)** | [17d1c9c246a06c7eefd2c2aa3517b825291056d8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/17d1c9c246a06c7eefd2c2aa3517b825291056d8) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -52,6 +52,12 @@ Cada agente deve:
 8. Ser submetido a testes específicos do domínio, incluindo testes de precisão, robustez, segurança e tratamento de casos-limite.
 9. Ter instruções, versão, ferramentas autorizadas, limites e critérios de aceitação documentados.
 10. Ser continuamente avaliado; uma designação interna de excelência nunca substitui evidência de qualidade.
+
+## 3A. Memória e melhoria contínua controlada
+
+Cada especialista deve manter registos das questões recebidas e das respostas correspondentes, respeitando transparência, finalidade, minimização, retenção e direitos dos utilizadores. O sistema deve permitir ao utilizador assinalar explicitamente as respostas que aceita ou considera úteis. A aceitação torna a resposta apenas elegível para curadoria; não prova que o conteúdo é verdadeiro nem autoriza a sua publicação automática.
+
+As interações elegíveis podem enriquecer um corpus versionado e específico da especialidade, após revisão de qualidade, verificação de proveniência, tratamento de dados pessoais/sensíveis, remoção de segredos e aprovação. A aprendizagem deve começar preferencialmente por recuperação de conhecimento e avaliação controladas; treino ou ajuste de modelos requer decisão técnica e legal própria. O histórico privado de uma pessoa não pode ser exposto a outros utilizadores nem convertido automaticamente em conhecimento partilhado. Devem existir mecanismos auditáveis de acesso, exportação, correção, retenção e eliminação, incluindo a propagação da eliminação a índices e conjuntos derivados quando aplicável.
 
 ## 4. Regra de universalidade
 

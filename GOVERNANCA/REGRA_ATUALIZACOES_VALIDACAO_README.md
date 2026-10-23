@@ -8,9 +8,9 @@
 | **Tipo documental** | NORMA |
 | **Fase** | GOVERNANCA |
 | **Estado** | APROVADO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 025abfbb21f11d453f93f79732378d89c1e87ec30d77fc4cb15cd92d3b15d0a4 |
-| **Commit de referência (versão anterior)** | [c84e46435a853d6b584b4ae671acae18a4471899](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c84e46435a853d6b584b4ae671acae18a4471899) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 922b1e1e1447c7d29eccfc4237285f90fdcde9559f14befc55cb7d35fbf85f35 |
+| **Commit de referência (versão anterior)** | [18e6b7d45d82754bb95a2614fa97aefd87fee7bc](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/18e6b7d45d82754bb95a2614fa97aefd87fee7bc) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -32,7 +32,9 @@
 
 ## Regra obrigatória
 
-Todas as atualizações do projeto que tenham sido validadas devem ser refletidas no `README.md` da branch principal.
+**Regra geral do projeto:** sempre que uma funcionalidade, correção, alteração técnica, decisão ou comportamento for implementado, atualizar toda a documentação afetada no mesmo conjunto de trabalho, incluindo requisitos, arquitetura, contratos de API, exemplos de integração, código/documentação técnica, testes, segurança, privacidade, operação, roadmap, decisões, histórico e README, conforme o impacto real.
+
+Todas as atualizações do projeto que tenham sido validadas devem ser refletidas no `README.md` da branch principal. Esta regra concretiza no APP_COM_ESPECIALISTA a [Norma transversal de Sincronização Integral da Documentação da GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/sincronizacao-integral-documentacao.md).
 
 **README oficial:** https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/blob/main/README.md
 
@@ -40,9 +42,9 @@ Todas as atualizações do projeto que tenham sido validadas devem ser refletida
 
 1. Executar a alteração no artefacto de origem.
 2. Validar a alteração com evidência adequada ao seu tipo — revisão documental, testes, verificações técnicas ou confirmação da decisão.
-3. Só após validação, atualizar o `README.md` para refletir o estado real e confirmado do projeto, incluindo decisões, capacidades, estado de implementação e roadmap quando relevante.
+3. Só após validação, atualizar todos os documentos afetados e o `README.md` para refletir o estado real e confirmado do projeto, incluindo decisões, capacidades, contratos, testes, estado de implementação e roadmap quando relevante.
 4. Rever a consistência entre o README e os artefactos alterados.
-5. Relê-los a partir do GitHub para confirmar que a gravação ocorreu e que não existem afirmações de implementação ou validação sem evidência.
+5. Relê-los a partir do GitHub para confirmar que a gravação ocorreu, recalcula os hashes canónicos aplicáveis e verifica a coerência entre documentos, código e evidências.
 
 ## Restrições
 
@@ -56,6 +58,7 @@ Todas as atualizações do projeto que tenham sido validadas devem ser refletida
 
 Um conjunto de alterações só fica documentalmente fechado quando:
 - a alteração de origem foi validada;
+- todos os documentos afetados foram atualizados ou a ausência de impacto foi registada;
 - o README foi atualizado ou a sua necessidade de alteração foi avaliada explicitamente;
 - os ficheiros relevantes foram relidos no GitHub;
 - o estado descrito no README corresponde às evidências disponíveis.

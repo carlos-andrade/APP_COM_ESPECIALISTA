@@ -8,8 +8,8 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | 1f8e7b24f9f5f0559f26fba3c38d56339aa0f12ef923b4c0c4b2ad1a3314d17c |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | d7532b977a90929e7d3aba45a5dafb0a45f94346b3b53c08ce2af37021ea7d90 |
 | **Commit de referência (versão anterior)** | [e09a35601b240fd5019e996b426f0f2c4a57f74e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/e09a35601b240fd5019e996b426f0f2c4a57f74e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
@@ -22,6 +22,11 @@
 | **Escopo** | Conforme definido no corpo documental |
 | **Objetivo** | Conforme definido no corpo documental |
 | **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
+
+[![APROVAR AGORA?](https://img.shields.io/badge/APROVAR%20AGORA%3F-2ea44f?style=for-the-badge)](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/issues/3)
+
+> **Aprovação formal:** selecione o botão verde para abrir o registo de aprovação deste documento. Para aprovar a versão indicada no issue, publique o comentário de aprovação solicitado. Abrir o link, por si só, não aprova o documento. A aprovação só é válida para a versão exata identificada no registo.
 
 ## 1. Visão lógica
 

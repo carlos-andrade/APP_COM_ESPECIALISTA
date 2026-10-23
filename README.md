@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
+| **Versão** | 1.0.2 |
 | **SHA-256 (conteúdo canónico)** | 95d9c7a693a7dd08c3a1aa048e727233c5537e047e1adade24df7a6a4532d89e |
-| **Commit de referência (versão anterior)** | [10e3a37e151a2512bc35d697e0fb4f8b26d57de3](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/10e3a37e151a2512bc35d697e0fb4f8b26d57de3) |
+| **Commit de referência (versão anterior)** | [c92edd97891bf39558897aa2a15b642f9416f950](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c92edd97891bf39558897aa2a15b642f9416f950) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -191,10 +191,10 @@ As decisões técnicas descritas neste documento são propostas de arquitetura. 
 
 Os documentos Markdown iniciais do projeto foram normalizados segundo a [Norma de Cabeçalho Documental Padrão do repositório GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md). A revisão inclui os requisitos, a arquitetura proposta, o roadmap, a carta CPE-001 e a regra de sincronização do README. Os campos SHA-256 canónico seguem a normalização UTF-8/LF e excluem do cálculo as linhas do próprio SHA-256 e do commit de referência.
 
-A aplicação do cabeçalho é uma validação estrutural/documental; não equivale à aprovação formal de todos os requisitos nem prova implementação ou testes funcionais.
+A aplicação do cabeçalho foi verificada nos seis documentos Markdown abrangidos, incluindo a correspondência dos SHA-256 canónicos com o conteúdo relido no GitHub. Esta é uma validação estrutural/documental; não equivale à aprovação formal de todos os requisitos nem prova implementação ou testes funcionais.
 
 ## Histórico de alterações
 
 | Versão | Data | Alteração | Responsável | Evidência |
 |---|---|---|---|---|
-| 1.0.1 | 2026-10-23 | Aplicação do cabeçalho canónico e sincronização da regra de governança | Responsável do projeto | Commit GitHub desta atualização |
+| 1.0.1 | 2026-10-23 | Aplicação inicial do cabeçalho canónico | Responsável do projeto | Histórico Git |\n| 1.0.2 | 2026-10-23 | Sincronização final do README após normalização e validação dos hashes dos documentos | Responsável do projeto | Commit GitHub desta atualização |

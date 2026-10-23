@@ -9,7 +9,7 @@
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | e99b09e63c56bdb5f41aae2ab46d3a281a6ace4e959a3e62d5ac661741111458 |
+| **SHA-256 (conteúdo canónico)** | f26b939b92bc22475abd637a1f72142cf572a516a0deae1a99e8ef3107b53f70 |
 | **Commit de referência (versão anterior)** | [f5d8936599998b68059c6c01172807c0e414f4e8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/f5d8936599998b68059c6c01172807c0e414f4e8) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |

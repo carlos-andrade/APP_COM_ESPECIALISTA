@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | b90170df93ab60cbd2985fa2cc208ffd3deb94a508eecf365337bc1c233f93bd |
-| **Commit de referência (versão anterior)** | [0261e8f6b206afe7a7db3f73fb982512d53a735e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/0261e8f6b206afe7a7db3f73fb982512d53a735e) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 82b94525228c9b36e8345d6f0f9c11eef818668f14efe074c12d493b85d6d4b5 |
+| **Commit de referência (versão anterior)** | [16655f2cab89a8c743bad1282543a4205e408ac1](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/16655f2cab89a8c743bad1282543a4205e408ac1) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -96,6 +96,12 @@ A seleção deve considerar adequação ao problema, objetivo declarado, context
 
 Quando o problema envolver vários domínios, a aplicação poderá propor uma sequência coordenada ou uma abordagem multidisciplinar, sem gerar encaminhamentos desnecessários.
 
+## 6A. Criação controlada de especialistas em falta
+
+Se a triagem determinar que nenhum especialista publicado e disponível é adequado, o sistema deve registar a lacuna e iniciar um fluxo controlado para criar e preparar um novo agente virtual de IA. O agente deverá ter domínio, âmbito, limites, instruções, fontes e ferramentas autorizadas definidos; ser preparado para atingir o padrão interno «PhD máximo» através de configuração, conhecimento autorizado e/ou treino ou ajuste tecnicamente justificados; e passar avaliações específicas, testes de segurança e critérios de aceitação antes de ser publicado.
+
+Após aprovação, o agente recebe identificador e versão estáveis e é integrado na categoria correspondente do catálogo, nas mesmas condições operacionais dos restantes especialistas aprovados. Até à aprovação, não pode atender como se estivesse validado: o sistema deve pedir esclarecimentos, oferecer uma alternativa segura ou encaminhar para apoio humano adequado. A publicação deve ser auditável, monitorizável e reversível. A ausência de cobertura nunca autoriza a publicação automática de um agente não testado.
+
 ## 7. Âmbito inicial (MVP)
 
 1. Página inicial com campo para descrever o problema.
@@ -180,6 +186,10 @@ Cada fase só deve ser considerada concluída após evidências e critérios de 
 ## Regra de governança — sincronização do README
 
 Todas as atualizações do projeto que tenham sido validadas devem ser refletidas neste README. Após validar uma alteração, atualizar este documento para corresponder ao estado confirmado, verificar a coerência com os artefactos alterados e reler os ficheiros no GitHub. Não apresentar propostas como funcionalidades implementadas nem declarar validações sem evidências. A regra completa está em [GOV-README-001 — Atualizações Validadas e README](GOVERNANCA/REGRA_ATUALIZACOES_VALIDACAO_README.md).
+
+## Requisitos e roadmap
+
+A especificação completa, incluindo os requisitos RF-013 a RF-019 para deteção de lacunas, criação, preparação, validação, integração e monitorização de novos especialistas, encontra-se em [docs/REQUISITOS_INICIAIS.md](docs/REQUISITOS_INICIAIS.md). O roadmap deverá incluir a construção e validação deste ciclo de vida antes de considerar o catálogo extensível pronto para produção.
 
 ## Estado do projeto
 

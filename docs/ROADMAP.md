@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | 9dba28858609fd47281e3728ccb4a162c74e1e8f55955e7f155ca336b1cfabcb |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 19705668aa106fdf79673de1ae4dc58d5fabbaa1efef861853063655a87aa9e3 |
 | **Commit de referência (versão anterior)** | [0fec9ba5c774be56941c9d4221a7c6f2e492f1a8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/0fec9ba5c774be56941c9d4221a7c6f2e492f1a8) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
@@ -22,6 +22,11 @@
 | **Escopo** | Conforme definido no corpo documental |
 | **Objetivo** | Conforme definido no corpo documental |
 | **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
+
+[![APROVAR AGORA?](https://img.shields.io/badge/APROVAR%20AGORA%3F-2ea44f?style=for-the-badge)](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/issues/4)
+
+> **Aprovação formal:** selecione o botão verde para abrir o registo de aprovação deste documento. Para aprovar a versão indicada no issue, publique o comentário de aprovação solicitado. Abrir o link, por si só, não aprova o documento. A aprovação só é válida para a versão exata identificada no registo.
 
 O roadmap define a sequência de trabalho proposta. Uma fase não é considerada concluída apenas por ter documentação: requer evidências verificáveis e critérios de aceitação.
 

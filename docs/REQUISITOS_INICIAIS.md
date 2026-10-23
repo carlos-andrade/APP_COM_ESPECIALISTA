@@ -8,9 +8,9 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | f26b939b92bc22475abd637a1f72142cf572a516a0deae1a99e8ef3107b53f70 |
-| **Commit de referência (versão anterior)** | [16655f2cab89a8c743bad1282543a4205e408ac1](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/16655f2cab89a8c743bad1282543a4205e408ac1) |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 5be19d15700a990b55b8eaa86f41f97ec519f469ba0c383e1180824b7f25a21e |
+| **Commit de referência (versão anterior)** | [18e6b7d45d82754bb95a2614fa97aefd87fee7bc](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/18e6b7d45d82754bb95a2614fa97aefd87fee7bc) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -71,6 +71,15 @@ Quando uma necessidade não puder ser atribuída com segurança e adequação a 
 8. Monitorizar resultados e manter mecanismos de correção, desativação e reversão.
 
 **Regra fail-closed:** a ausência de um especialista adequado nunca autoriza a publicação automática de um agente não testado. Até à aprovação, o sistema deve usar uma alternativa segura, pedir clarificação ou encaminhar a pessoa para apoio humano apropriado.
+
+## Requisitos funcionais — memória de aprendizagem por especialista
+
+- **RF-020 — Registo das interações:** registar as questões recebidas por cada especialista e associar-lhes as respostas correspondentes, com identificador do especialista e da versão, data, contexto mínimo necessário e estado de processamento. O registo fica sujeito a informação transparente, base legal aplicável, controlos de privacidade e política de retenção; não significa conservação ilimitada nem autorização para reutilização irrestrita.
+- **RF-021 — Respostas explicitamente aceites:** permitir ao utilizador assinalar de forma explícita que uma resposta foi aceite/útil. Só respostas com esse sinal podem ser candidatas ao conjunto de conhecimento curado do especialista; silêncio, continuidade da conversa ou ausência de reclamação não contam como aceitação.
+- **RF-022 — Aprendizagem controlada:** usar interações elegíveis para melhorar a recuperação de conhecimento, exemplos de avaliação e instruções do especialista, mediante curadoria, deduplicação, verificação de qualidade, proveniência e aprovação. Não atualizar automaticamente os pesos do modelo nem publicar conhecimento novo apenas porque uma resposta foi aceite.
+- **RF-023 — Isolamento e direitos dos titulares:** impedir que um utilizador aceda a conversas de outros utilizadores; suportar acesso, exportação, correção e eliminação nos termos aplicáveis; retirar do índice de conhecimento e dos conjuntos de aprendizagem os registos cuja utilização deixe de estar autorizada, com processo auditável.
+- **RF-024 — Proteção de dados sensíveis:** minimizar e, quando possível, anonimizar ou pseudonimizar dados antes de qualquer utilização secundária; detetar ou encaminhar dados sensíveis para tratamento restrito; excluir credenciais, segredos e dados desnecessários dos conjuntos de aprendizagem.
+- **RF-025 — Auditoria e reversão:** manter proveniência da origem, consentimento/base legal, versão do especialista, transformação aplicada, aprovação e destino de cada item de conhecimento; permitir retirar itens e reverter versões do corpus quando forem detetados erros, dados indevidos ou degradação de qualidade.
 
 ## Requisitos não funcionais
 

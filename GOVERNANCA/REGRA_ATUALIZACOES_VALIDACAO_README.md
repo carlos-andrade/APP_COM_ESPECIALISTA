@@ -9,8 +9,8 @@
 | **Fase** | GOVERNANCA |
 | **Estado** | APROVADO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 81fa33f340b2f8aa9ec678c33a4f934c91d238f5f1cb987771fb0610f74c79d7 |
-| **Commit de referência (versão anterior)** | [1abd1dc5a0e9faa5bed6b5adac6558cf56c9eba5](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/1abd1dc5a0e9faa5bed6b5adac6558cf56c9eba5) |
+| **SHA-256 (conteúdo canónico)** | 025abfbb21f11d453f93f79732378d89c1e87ec30d77fc4cb15cd92d3b15d0a4 |
+| **Commit de referência (versão anterior)** | [c84e46435a853d6b584b4ae671acae18a4471899](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c84e46435a853d6b584b4ae671acae18a4471899) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |

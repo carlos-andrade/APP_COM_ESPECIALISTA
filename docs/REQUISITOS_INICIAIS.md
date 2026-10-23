@@ -8,8 +8,8 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 208b83c87b700cfff14ea54851bcf02a5d9f9605b863fdbe21747951bd83f50a |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | c263a3637fc399505c6083c7c820276948b619cd2b129f5fba7e2260a10d8e61 |
 | **Commit de referência (versão anterior)** | [18e6b7d45d82754bb95a2614fa97aefd87fee7bc](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/18e6b7d45d82754bb95a2614fa97aefd87fee7bc) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
@@ -24,7 +24,7 @@
 | **Dependências** | N/A — não declaradas além das referências explícitas no documento |
 
 
-[![APROVAR AGORA?](https://img.shields.io/badge/APROVAR%20AGORA%3F-2ea44f?style=for-the-badge)](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/issues/2)
+[![APROVAR AGORA?](https://img.shields.io/badge/APROVAR%20AGORA%3F-%E2%9C%93-2ea44f?style=for-the-badge)](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/issues/2)
 
 > **Aprovação formal:** selecione o botão verde para abrir o registo de aprovação deste documento. Para aprovar a versão indicada no issue, publique o comentário de aprovação solicitado. Abrir o link, por si só, não aprova o documento. A aprovação só é válida para a versão exata identificada no registo.
 

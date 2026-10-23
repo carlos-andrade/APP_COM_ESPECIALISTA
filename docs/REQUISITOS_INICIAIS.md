@@ -1,5 +1,28 @@
 # Requisitos iniciais — APP_COM_ESPECIALISTA
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-REQ-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | ESPECIFICACAO |
+| **Fase** | FASE_0_FUNDAMENTOS |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | 6a9f62c9bc847e2d0533e3f214856750fd3bdc61560c88a6020666cf026f25d4 |
+| **Commit de referência (versão anterior)** | [a511f3c6d31c93b88040c104a5d9cf4106e26bf9](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/a511f3c6d31c93b88040c104a5d9cf4106e26bf9) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
+| **Origem** | Revisão documental do projeto; requisitos iniciais existentes no repositório |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; referências e evidências indicadas no corpo documental |
+| **Escopo** | Conforme definido no corpo documental |
+| **Objetivo** | Conforme definido no corpo documental |
+| **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
 ## Objetivo
 Permitir que uma pessoa explique um problema ou selecione diretamente uma especialidade e receba apoio contextual do especialista mais adequado.
 

@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | 560dba6b2d4eb3b30dbdd57259e8aa6af93e83f094d6f89638144c341fe546b9 |
+| **Versão** | 1.0.8 |
+| **SHA-256 (conteúdo canónico)** | fbc957a7fdfd7b0366c58a09b7f932b096b459aff5acbbdc01beb0cf0cdfdc65 |
 | **Commit de referência (versão anterior)** | [145c92915751111d6a17cc4a8f9412a1af1fcf4f](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/145c92915751111d6a17cc4a8f9412a1af1fcf4f) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
@@ -41,6 +41,8 @@ A aplicação não deve ser apenas um chatbot com personagens diferentes: deve c
 Todos os especialistas, atuais e futuros, são agentes virtuais alimentados por inteligência artificial e devem ser concebidos e avaliados segundo o padrão interno **«PhD máximo»** da sua especialidade. Esta expressão significa um objetivo de excelência técnica, profundidade e rigor; não é uma credencial académica literal nem autoriza alegações de doutoramento, licença profissional ou infalibilidade. A publicação de cada agente depende de critérios de qualidade, testes e salvaguardas próprios do domínio.
 
 Carta normativa: [CPE-001 — Especialistas Virtuais de IA](GOVERNANCA/CARTA_CPE-001_ESPECIALISTAS_VIRTUAIS_IA.md).
+
+Norma de aprovação documental: [Padrão local — Botão de aprovação documental](GOVERNANCA/PADRAO_BOTAO_APROVACAO_DOCUMENTAL.md).
 
 ## 2. Princípios fundamentais
 

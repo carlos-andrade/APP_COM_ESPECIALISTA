@@ -1,5 +1,28 @@
 # Arquitetura proposta — APP_COM_ESPECIALISTA
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-ARQ-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | ESPECIFICACAO |
+| **Fase** | FASE_0_FUNDAMENTOS |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | c020ba7ff1063f83d48a4eef45cb5c214d3050fb00620ef3d12cf15abf5d29b7 |
+| **Commit de referência (versão anterior)** | [61347612289e95801bb792469131e34390f96362](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/61347612289e95801bb792469131e34390f96362) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
+| **Origem** | Revisão documental do projeto; proposta arquitetural existente no repositório |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; referências e evidências indicadas no corpo documental |
+| **Escopo** | Conforme definido no corpo documental |
+| **Objetivo** | Conforme definido no corpo documental |
+| **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
 ## 1. Visão lógica
 
 Cliente web/mobile → API Gateway/Backend → Orquestrador de especialistas → Adaptadores de IA e ferramentas autorizadas.

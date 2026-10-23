@@ -3,6 +3,15 @@
 ## Objetivo
 Permitir que uma pessoa explique um problema ou selecione diretamente uma especialidade e receba apoio contextual do especialista mais adequado.
 
+## Regra obrigatória para todos os especialistas
+
+- **REG-IA-001 — Especialistas virtuais:** todos os especialistas existentes e futuros são agentes alimentados por IA; nenhum perfil humano é apresentado como se fosse um agente do catálogo.
+- **REG-IA-002 — Padrão «PhD máximo»:** cada agente deve visar o máximo rigor e profundidade possíveis na especialidade, com instruções, limites, avaliação e testes próprios. A expressão é um padrão interno de qualidade, não uma credencial académica literal.
+- **REG-IA-003 — Gate de publicação:** nenhum agente deve ser publicado sem perfil documentado, limites explícitos, avaliação específica do domínio e validações de segurança aplicáveis.
+- **REG-IA-004 — Transparência e segurança:** agentes não podem alegar credenciais reais inexistentes nem apresentar-se como infalíveis; devem reconhecer incertezas e encaminhar situações de alto risco quando necessário.
+
+Carta normativa: [CPE-001 — Especialistas Virtuais de IA](../GOVERNANCA/CARTA_CPE-001_ESPECIALISTAS_VIRTUAIS_IA.md).
+
 ## Requisitos funcionais
 
 - **RF-001 — Entrada por problema:** aceitar texto livre e, futuramente, voz.

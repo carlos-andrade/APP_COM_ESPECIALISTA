@@ -1,5 +1,28 @@
 # CARTA DE PRINCÍPIOS — ESPECIALISTAS VIRTUAIS DE IA
 
+| Campo | Valor |
+|---|---|
+| **ID** | CPE-CARTA-001 |
+| **Projeto** | APP_COM_ESPECIALISTA |
+| **Repositório** | [carlos-andrade/APP_COM_ESPECIALISTA](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA) |
+| **Tipo documental** | CARTA |
+| **Fase** | TRANSVERSAL |
+| **Estado** | EM_REVISAO |
+| **Versão** | 1.0.1 |
+| **SHA-256 (conteúdo canónico)** | a5086095e2ef8d98d142b1f03ab9d8e331a01f2b14df49cefc88b788bac72d39 |
+| **Commit de referência (versão anterior)** | [04a22292e2f273be13d04dd90d62814b290d8c2b](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/04a22292e2f273be13d04dd90d62814b290d8c2b) |
+| **Data de criação** | 2026-10-23 |
+| **Data de atualização** | 2026-10-23 |
+| **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
+| **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
+| **Origem** | Carta de princípios já registada no repositório do projeto |
+| **Autoridade superior** | [Norma de Cabeçalho Documental Padrão — GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/CABE%C3%87ALHO/NORMA-CABECALHO-PADRAO.md) |
+| **Cadeia de autoridade** | PROMPTS → CARTAS → LAYOUT ÚNICO → CÓDIGO |
+| **Rastreabilidade** | Histórico Git; referências e evidências indicadas no corpo documental |
+| **Escopo** | Conforme definido no corpo documental |
+| **Objetivo** | Conforme definido no corpo documental |
+| **Dependências** | N/A — não declaradas além das referências explícitas no documento |
+
 - **Projeto:** APP_COM_ESPECIALISTA
 - **ID da carta:** CPE-001
 - **Versão:** 1.0.0

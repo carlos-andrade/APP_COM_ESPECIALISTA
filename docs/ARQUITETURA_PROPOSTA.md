@@ -8,8 +8,8 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.2 |
-| **SHA-256 (conteúdo canónico)** | fb6e23ebb268fd40fe9ba305a7925bbe366b895f08bf47e0d98000bc3d07ad38 |
+| **Versão** | 1.0.3 |
+| **SHA-256 (conteúdo canónico)** | 1f8e7b24f9f5f0559f26fba3c38d56339aa0f12ef923b4c0c4b2ad1a3314d17c |
 | **Commit de referência (versão anterior)** | [e09a35601b240fd5019e996b426f0f2c4a57f74e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/e09a35601b240fd5019e996b426f0f2c4a57f74e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
@@ -101,7 +101,7 @@ Base: `/api/v1`.
 | GET | `/conversations/{id}` | Obter conversa a que o cliente tem acesso |
 | POST | `/feedback` | Registar feedback associado a resposta/conversa |
 
-Todos os caminhos são conceptuais até à aprovação dos esquemas OpenAPI. Respostas deverão usar códigos HTTP adequados, mensagens de erro consistentes e identificadores de pedido. Endpoints autenticados devem verificar propriedade ou acesso delegado ao recurso.
+Todos os caminhos são conceptuais até à aprovação dos esquemas OpenAPI. O endpoint POST /feedback deverá aceitar um sinal explícito de aceitação/utilidade, associado ao identificador da resposta, conversa, utilizador e versão do especialista; o sinal não equivale a prova de verdade nem autoriza publicação automática. Respostas deverão usar códigos HTTP adequados, mensagens de erro consistentes e identificadores de pedido. Endpoints autenticados devem verificar propriedade ou acesso delegado ao recurso.
 
 ## 4. Segurança e limites
 

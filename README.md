@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | ecc84d2fb9669d6cfd22d49fbd912d22647ebf64d4895811a746876dfa8d8b52 |
-| **Commit de referência (versão anterior)** | [b856b78b43e2d3ce1f36984668dcd15eb4ab1851](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/b856b78b43e2d3ce1f36984668dcd15eb4ab1851) |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | 5bd44cf55b9e08adc92b1ba898359e1a9d1f0097309319c21dc03ad460b54583 |
+| **Commit de referência (versão anterior)** | [145c92915751111d6a17cc4a8f9412a1af1fcf4f](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/145c92915751111d6a17cc4a8f9412a1af1fcf4f) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -101,6 +101,10 @@ Quando o problema envolver vários domínios, a aplicação poderá propor uma s
 Se a triagem determinar que nenhum especialista publicado e disponível é adequado, o sistema deve registar a lacuna e iniciar um fluxo controlado para criar e preparar um novo agente virtual de IA. O agente deverá ter domínio, âmbito, limites, instruções, fontes e ferramentas autorizadas definidos; ser preparado para atingir o padrão interno «PhD máximo» através de configuração, conhecimento autorizado e/ou treino ou ajuste tecnicamente justificados; e passar avaliações específicas, testes de segurança e critérios de aceitação antes de ser publicado.
 
 Após aprovação, o agente recebe identificador e versão estáveis e é integrado na categoria correspondente do catálogo, nas mesmas condições operacionais dos restantes especialistas aprovados. Até à aprovação, não pode atender como se estivesse validado: o sistema deve pedir esclarecimentos, oferecer uma alternativa segura ou encaminhar para apoio humano adequado. A publicação deve ser auditável, monitorizável e reversível. A ausência de cobertura nunca autoriza a publicação automática de um agente não testado.
+
+## Memória de interações e melhoria contínua
+
+Cada especialista deverá registar as questões recebidas e as respostas correspondentes, e permitir que o utilizador assinale explicitamente as respostas aceites/úteis. Esses registos não são automaticamente partilhados nem usados para treinar modelos: apenas itens elegíveis podem entrar num corpus específico do especialista depois de curadoria, verificação, proteção de dados e aprovação. O sistema deverá garantir isolamento entre utilizadores, transparência, retenção limitada, direitos de acesso/exportação/eliminação e rastreabilidade das versões do conhecimento. Esta capacidade está especificada, mas ainda não implementada.
 
 ## 7. Âmbito inicial (MVP)
 

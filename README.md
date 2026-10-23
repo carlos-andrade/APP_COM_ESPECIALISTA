@@ -154,6 +154,10 @@ Cada fase só deve ser considerada concluída após evidências e critérios de 
 - A API é utilizável por clientes independentes e dispõe de documentação e testes.
 - A privacidade, a segurança e a qualidade são validadas antes da expansão.
 
+## Regra de governança — sincronização do README
+
+Todas as atualizações do projeto que tenham sido validadas devem ser refletidas neste README. Após validar uma alteração, atualizar este documento para corresponder ao estado confirmado, verificar a coerência com os artefactos alterados e reler os ficheiros no GitHub. Não apresentar propostas como funcionalidades implementadas nem declarar validações sem evidências. A regra completa está em [GOV-README-001 — Atualizações Validadas e README](GOVERNANCA/REGRA_ATUALIZACOES_VALIDACAO_README.md).
+
 ## Estado do projeto
 
 **Estado:** visão e escopo inicial documentados; implementação ainda por iniciar.

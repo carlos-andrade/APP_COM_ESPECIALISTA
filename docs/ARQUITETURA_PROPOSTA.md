@@ -8,9 +8,9 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | a2ab975f00ced511cb362ea7ad50a72926a813eafbb2ab0d59a3eafbc33bc3a7 |
-| **Commit de referência (versão anterior)** | [161e9c259d40da5d94a28459a42f32827c78d853](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/161e9c259d40da5d94a28459a42f32827c78d853) |
+| **Versão** | 1.0.2 |
+| **SHA-256 (conteúdo canónico)** | 14033681b321b7024176e393193360af00d8f6fd5163e732cb99e855f2501e01 |
+| **Commit de referência (versão anterior)** | [e09a35601b240fd5019e996b426f0f2c4a57f74e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/e09a35601b240fd5019e996b426f0f2c4a57f74e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -63,6 +63,17 @@ O backend comunica com o catálogo de especialistas, o serviço de conversas, a 
 - Aplicar autorização em cada leitura e escrita.
 - Definir prazos de retenção e mecanismos de exportação/eliminação.
 - Não usar memória persistente sem comunicação clara e controlo adequado.
+
+### Memória de interações e aprendizagem curada
+
+- **Armazenamento de conversas:** persistir questões e respostas num serviço separado do catálogo, com identificador do utilizador/tenant, conversa, especialista e versão, timestamps, estado de aceitação e metadados mínimos necessários. Aplicar autorização por recurso em cada leitura e escrita.
+- **Sinal de aceitação:** recolher um evento explícito do utilizador para identificar uma resposta aceite/útil; não inferir aceitação pelo silêncio nem pela continuação da conversa.
+- **Corpus por especialista:** manter um corpus versionado e segregado por especialidade, com itens elegíveis, proveniência, estado de revisão, etiquetas de qualidade e referências aos registos de origem sob controlo de acesso.
+- **Pipeline de curadoria:** validar, desduplicar, minimizar dados, remover segredos, avaliar risco e qualidade, anonimizar/pseudonimizar quando possível, rever a autorização de reutilização e aprovar antes de indexar ou disponibilizar qualquer item a outros utilizadores.
+- **Recuperação antes de treino:** preferir inicialmente recuperação de conhecimento (RAG) e conjuntos de avaliação versionados. Treino/fine-tuning só após decisão técnica explícita, base legal e avaliação de risco; a aceitação de uma resposta não autoriza, por si só, treino automático.
+- **Separação de finalidades:** histórico privado de conversa não é automaticamente conhecimento partilhado. A reutilização para melhorar o especialista exige transparência, base legal e consentimento quando necessário, além de mecanismos de exclusão.
+- **Direitos e ciclo de vida:** suportar retenção configurável, acesso, exportação, correção e eliminação; propagar eliminações aos índices e corpora derivados quando aplicável; manter logs de auditoria sem duplicar conteúdo sensível.
+- **Segurança e qualidade:** encriptar dados em trânsito e em repouso, restringir acessos por função, registar auditoria, testar isolamento entre utilizadores/tenants e avaliar contaminação, envenenamento, enviesamento e regressões antes de publicar cada versão do corpus.
 
 ### Camada de modelos e ferramentas
 - Adaptadores substituíveis para fornecedores de modelos.

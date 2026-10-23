@@ -8,9 +8,9 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.3 |
-| **SHA-256 (conteúdo canónico)** | 82b94525228c9b36e8345d6f0f9c11eef818668f14efe074c12d493b85d6d4b5 |
-| **Commit de referência (versão anterior)** | [16655f2cab89a8c743bad1282543a4205e408ac1](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/16655f2cab89a8c743bad1282543a4205e408ac1) |
+| **Versão** | 1.0.4 |
+| **SHA-256 (conteúdo canónico)** | ecc84d2fb9669d6cfd22d49fbd912d22647ebf64d4895811a746876dfa8d8b52 |
+| **Commit de referência (versão anterior)** | [b856b78b43e2d3ce1f36984668dcd15eb4ab1851](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/b856b78b43e2d3ce1f36984668dcd15eb4ab1851) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
@@ -186,6 +186,10 @@ Cada fase só deve ser considerada concluída após evidências e critérios de 
 ## Regra de governança — sincronização do README
 
 Todas as atualizações do projeto que tenham sido validadas devem ser refletidas neste README. Após validar uma alteração, atualizar este documento para corresponder ao estado confirmado, verificar a coerência com os artefactos alterados e reler os ficheiros no GitHub. Não apresentar propostas como funcionalidades implementadas nem declarar validações sem evidências. A regra completa está em [GOV-README-001 — Atualizações Validadas e README](GOVERNANCA/REGRA_ATUALIZACOES_VALIDACAO_README.md).
+
+## Regra geral — documentação integral sincronizada
+
+Sempre que uma funcionalidade, correção, alteração técnica ou decisão for implementada, atualizar toda a documentação afetada: requisitos, arquitetura, contratos da API, testes, segurança, privacidade, operação, roadmap, decisões e README, conforme o impacto real. Recalcular hashes canónicos, verificar a coerência entre documentos e implementação e reler os ficheiros no GitHub. Não declarar conclusão sem evidência. A regra específica está em [GOVERNANCA/REGRA_ATUALIZACOES_VALIDACAO_README.md](GOVERNANCA/REGRA_ATUALIZACOES_VALIDACAO_README.md) e deriva da [Norma transversal da GOVERNANCA](https://github.com/carlos-andrade/GOVERNANCA/blob/main/standards/sincronizacao-integral-documentacao.md). A publicação no repositório-mestre não significa que todos os repositórios adotaram automaticamente a regra; cada adoção deve ser verificada.
 
 ## Requisitos e roadmap
 

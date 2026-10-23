@@ -9,8 +9,8 @@
 | **Fase** | TRANSVERSAL |
 | **Estado** | EM_REVISAO |
 | **Versão** | 1.0.1 |
-| **SHA-256 (conteúdo canónico)** | 817cfea5727b7f917dc3e167867cd81b23efd772e77d5f7949bfe333746a3088 |
-| **Commit de referência (versão anterior)** | [36d79be888af95169d16695659394750e566a029](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/36d79be888af95169d16695659394750e566a029) |
+| **SHA-256 (conteúdo canónico)** | af921391615b3dd4dd0cd4e2e4e12de5542208d086adde0de1b5ccd6ad0cb1e7 |
+| **Commit de referência (versão anterior)** | [5d090513674ae9fde8633e6b5fdc9b9698eca590](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/5d090513674ae9fde8633e6b5fdc9b9698eca590) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-23 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |

@@ -8,11 +8,11 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| SHA-256 (conteúdo canónico) | b68025b4c64528e9cf6eb547bbb8085f00da81fb729c37ef3b4f56beec00e124 |
+| **Versão** | 1.0.9
+| SHA-256 (conteúdo canónico) | e751d2afea94c0e794cd30a3a008d273356e9baf21e8d4766c4099f02c793ec8
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-24 |
+| **Data de atualização** | 2026-10-24
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Revisão documental do projeto; roadmap existente no repositório |
@@ -67,3 +67,12 @@ Não declarar implementação, testes, segurança ou prontidão de produção se
 | Segurança e privacidade | Pendente | Política de retenção/RGPD, revisão de autenticação, rate limit, eliminação e memória |
 | Cliente externo | Smoke test local passou | Cliente Python invocou por HTTP o catálogo e a triagem da API local; falta ambiente implantado e integração a partir de segundo repositório |
 | Piloto | NÃO AUTORIZADO | Depende do fecho verificável de todos os gates anteriores |
+
+
+## R9 — Sistema visual móvel unificado
+
+| Entrega | Critério de saída | Estado |
+|---|---|---|
+| Sistema visual partilhado iOS/Android, temas claro/escuro | Documento de especificação, protótipos das duas plataformas/temas, tokens, fluxos, avaliação de acessibilidade e testes de paridade | Especificação criada em EM_REVISAO; protótipos e implementação por iniciar |
+
+Referência: [docs/SISTEMA_VISUAL_UNIFICADO_IOS_ANDROID.md](SISTEMA_VISUAL_UNIFICADO_IOS_ANDROID.md). A direção de produto está registada na Issue #7. Não declarar UX implementada até existirem evidências verificáveis. Esta fase não altera os gates de CI, segurança, privacidade nem a condição de piloto NÃO AUTORIZADO.

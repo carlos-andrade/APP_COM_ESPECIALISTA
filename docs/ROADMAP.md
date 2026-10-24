@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | 4fae7cfefcbe74a4b586e1094bee77f1aded1303446e4007dd947bf6b4782fd6 |
+| **Versão** | 1.0.8 |
+| SHA-256 (conteúdo canónico) | b68025b4c64528e9cf6eb547bbb8085f00da81fb729c37ef3b4f56beec00e124 |
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-24 |
@@ -63,7 +63,7 @@ Não declarar implementação, testes, segurança ou prontidão de produção se
 | PostgreSQL | Preparação no ramo de remediação | Dockerfile, compose.yaml, psycopg e esquema inicial adicionados; falta executar e validar |
 | Testes | Validação local básica passou | 12 testes passaram localmente; falta CI verde e integração PostgreSQL |
 | CI | Bloqueada | Criação do workflow foi bloqueada pelo conector; sem execução verde |
-| Documentação | Em revisão | Cabeçalhos e hashes das novas versões precisam de validação; não marcar como APROVADO sem decisão explícita |
+| Documentação | Em revisão | Hashes canónicos verificados; paridade OpenAPI caminho/método passou, schemas integrais pendentes; aprovação explícita ainda necessária |
 | Segurança e privacidade | Pendente | Política de retenção/RGPD, revisão de autenticação, rate limit, eliminação e memória |
 | Cliente externo | Smoke test local passou | Cliente Python invocou por HTTP o catálogo e a triagem da API local; falta ambiente implantado e integração a partir de segundo repositório |
 | Piloto | NÃO AUTORIZADO | Depende do fecho verificável de todos os gates anteriores |

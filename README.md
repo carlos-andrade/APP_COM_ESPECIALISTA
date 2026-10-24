@@ -8,8 +8,8 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.10 |
-| **SHA-256 (conteúdo canónico)** | c24fa9b27ca2bb1faeab162ea4aef321c2f961aa857c6c4a76c9a3e070bfeef5 |
+| **Versão** | 1.0.11 |
+| **SHA-256 (conteúdo canónico)** | a6ce97556777b9c9fb32d959c875a7cee107d76e94e2e338335d23aa73406f87 |
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-24 |
@@ -231,5 +231,6 @@ A aplicação do cabeçalho foi verificada nos seis documentos Markdown abrangid
 - O núcleo inicial da API foi incorporado na branch principal através do PR #6. A integração no GitHub não equivale a aprovação de segurança ou de piloto.
 - O trabalho de remediação está no [PR #8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/pull/8), incluindo suporte de PostgreSQL, Docker Compose e testes adicionais.
 - A suite local passou com 12 testes; a CI ainda não está ativa porque a criação do workflow GitHub Actions foi bloqueada pelo conector. Não há execução verde comprovada.
+- O cliente Python foi executado por HTTP contra uma API local: catálogo e triagem responderam conforme o contrato. Falta provar integração a partir de um segundo repositório contra ambiente implantado.
 - [Relatório de validação técnica](docs/VALIDACAO_TECNICA_2026-10-24.md) regista as evidências locais e os gates pendentes.
 - A API e os documentos técnicos continuam em revisão. Não declarar piloto até concluir testes, revisão de segurança, política de retenção/RGPD, validação de hashes e chamada real de cliente externo.

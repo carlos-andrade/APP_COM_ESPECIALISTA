@@ -9,7 +9,7 @@
 | Fase | FASE_1_IMPLEMENTACAO_MVP |
 | Estado | EM_REVISAO |
 | Versão | 1.0.1 |
-| SHA-256 (conteúdo canónico) | 68c7c6639d7691aa90fe5c1ae54839837acc59bbd65502f669a6f9542fedd07e |
+| SHA-256 (conteúdo canónico) | 32f779c33b963bb35b3a8695ea70d675e542ec0c0039f5b8e3532258d94866a0 |
 | Commit de referência (versão anterior) | N/A — documento novo |
 | Data de criação | 2026-10-24 |
 | Data de atualização | 2026-10-24 |

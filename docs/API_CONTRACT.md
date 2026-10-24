@@ -59,3 +59,8 @@ OpenAPI disponível em /openapi.json e versionado em openapi.yaml. Mudanças adi
 ## Limites do MVP
 
 Não aprovado para produção. SQLite, ausência de verificação de email, gestão simplificada de JWT, curadoria administrativa inicial e política provisória de retenção exigem revisão antes do piloto.
+
+
+## PostgreSQL
+
+A implementação suporta a variável `DATABASE_URL` e o compose de desenvolvimento. A implantação de referência usa PostgreSQL; o SQLite fica reservado a testes locais. A compatibilidade real deve ser comprovada por testes de integração contra PostgreSQL antes de declarar o contrato estável.

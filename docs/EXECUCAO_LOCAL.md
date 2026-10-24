@@ -50,3 +50,14 @@ Instalar requests no ambiente do cliente. Definir CPE_API_BASE_URL, CPE_CLIENT_E
 ## Limitações antes de piloto
 
 Migrar para PostgreSQL, adicionar migrações e backup/restauro, rever rotação e revogação de tokens, rate limiting distribuído, verificação de email, proteção contra abuso, política RGPD de retenção/eliminação, revisão do fornecedor e testes independentes de segurança. Não colocar o serviço na internet pública antes de fechar estes gates.
+
+
+## PostgreSQL com Docker Compose
+
+1. Instalar Docker Engine e Docker Compose.
+2. Copiar `.env.example` para `.env` e definir `POSTGRES_PASSWORD`, `CPE_JWT_SECRET` e `CPE_ADMIN_BOOTSTRAP_TOKEN` com segredos aleatórios distintos.
+3. Executar `docker compose up --build -d`.
+4. Confirmar a saúde com `curl http://127.0.0.1:8000/api/v1/health`.
+5. Consultar os logs com `docker compose logs --tail=100 api db`.
+
+O serviço API liga-se ao PostgreSQL através de `DATABASE_URL`. O volume nomeado persiste os dados, mas não substitui backups. A aplicação cria as tabelas na inicialização; o ficheiro `migrations/0001_initial.sql` documenta o esquema inicial para auditoria e evolução. Validar backup/restauro e migrações em ambiente de teste antes de piloto.

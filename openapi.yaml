@@ -4,7 +4,7 @@ info:
   version: 1.0.0
   description: Contrato inicial v1; a aplicação FastAPI também publica /openapi.json.
 servers:
-  - url: https://api.example.invalid/api/v1
+  - url: http://127.0.0.1:8000/api/v1
 security:
   - bearerAuth: []
 paths:
@@ -30,6 +30,11 @@ paths:
     post:
       security: []
       summary: Autenticar e obter token Bearer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/LoginRequest'}
       responses:
         '200': {description: Token emitido}
         '401': {$ref: '#/components/responses/Unauthorized'}
@@ -52,8 +57,17 @@ paths:
         '401': {$ref: '#/components/responses/Unauthorized'}
         '422': {$ref: '#/components/responses/ValidationError'}
   /conversations:
+    get:
+      summary: Listar conversas próprias
+      responses:
+        '200': {description: Lista de conversas do utilizador autenticado}
     post:
       summary: Criar conversa
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/ConversationRequest'}
       responses:
         '201': {description: Conversa criada}
   /conversations/{cid}/messages:
@@ -74,6 +88,11 @@ paths:
   /feedback:
     post:
       summary: Registar aceitação explícita; cria item pendente de curadoria
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/FeedbackRequest'}
       responses:
         '200': {description: Feedback registado}
   /me/export:
@@ -86,6 +105,68 @@ paths:
       summary: Eliminar conta e histórico
       responses:
         '204': {description: Conta eliminada}
+  /admin/bootstrap:
+    post:
+      summary: Promover a conta autenticada a administrador uma única vez
+      parameters:
+        - in: header
+          name: X-Admin-Bootstrap-Token
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Administrador inicial criado}
+        '403': {description: Segredo inválido}
+        '409': {description: Bootstrap já utilizado}
+  /specialists/{sid}:
+    get:
+      summary: Consultar especialista
+      parameters:
+        - in: path
+          name: sid
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Perfil do especialista}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /conversations/{cid}:
+    get:
+      summary: Consultar conversa própria e mensagens
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Conversa própria}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /admin/memory:
+    get:
+      summary: Listar itens de memória pendentes
+      responses:
+        '200': {description: Itens pendentes}
+        '403': {description: Permissão administrativa necessária}
+  /admin/memory/{mid}/review:
+    post:
+      summary: Rever item de memória
+      parameters:
+        - in: path
+          name: mid
+          required: true
+          schema: {type: string}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/MemoryReviewRequest'}
+      responses:
+        '200': {description: Revisão registada}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /admin/audit:
+    get:
+      summary: Consultar auditoria
+      responses:
+        '200': {description: Eventos de auditoria}
+        '403': {description: Permissão administrativa necessária}
 components:
   securitySchemes:
     bearerAuth: {type: http, scheme: bearer, bearerFormat: JWT}
@@ -96,6 +177,30 @@ components:
       properties:
         email: {type: string, format: email, maxLength: 254}
         password: {type: string, minLength: 12, maxLength: 128}
+    LoginRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: {type: string, maxLength: 254}
+        password: {type: string, minLength: 1, maxLength: 128}
+    ConversationRequest:
+      type: object
+      required: [specialist_id]
+      properties:
+        specialist_id: {type: string, minLength: 1, maxLength: 80}
+        title: {type: string, maxLength: 160, default: Nova conversa}
+    FeedbackRequest:
+      type: object
+      required: [message_id, accepted]
+      properties:
+        message_id: {type: string}
+        accepted: {type: boolean}
+    MemoryReviewRequest:
+      type: object
+      required: [state, rationale]
+      properties:
+        state: {type: string, enum: [approved, rejected]}
+        rationale: {type: string, minLength: 3, maxLength: 1000}
     MessageRequest:
       type: object
       required: [content]

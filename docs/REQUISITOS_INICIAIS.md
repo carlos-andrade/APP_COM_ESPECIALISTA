@@ -8,11 +8,11 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | c263a3637fc399505c6083c7c820276948b619cd2b129f5fba7e2260a10d8e61 |
-| **Commit de referência (versão anterior)** | [18e6b7d45d82754bb95a2614fa97aefd87fee7bc](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/18e6b7d45d82754bb95a2614fa97aefd87fee7bc) |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | e94ccf2b2510d46f945e380b296b007b553472208a2e80cc52567d7830fd589a |
+| **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-23 |
+| **Data de atualização** | 2026-10-24 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Revisão documental do projeto; requisitos iniciais existentes no repositório |
@@ -127,3 +127,10 @@ Quando uma necessidade não puder ser atribuída com segurança e adequação a 
 ## Estado
 
 Documento atualizado para incluir a criação controlada de especialistas em falta. Os requisitos continuam propostos e não são considerados formalmente aprovados até existir uma decisão explícita.
+
+
+## Estado de implementação e validação — 2026-10-24
+
+O código inicial contém catálogo, triagem por regras, conversação com adaptador OpenAI configurável, feedback explícito e memória pendente de curadoria. A suite local passou com 12 testes de autenticação, autorização, isolamento, feedback/curadoria e privacidade; falta a execução de CI e os testes PostgreSQL. O contrato de API e a implementação ainda carecem de reconciliação integral. A entrega não satisfaz ainda os critérios para piloto.
+
+Critérios de saída adicionais: CI verde; testes de autenticação, autorização e isolamento; testes de integração PostgreSQL; validação OpenAPI; política de retenção e direitos dos titulares aprovada; revisão de segurança independente; integração real por cliente de segundo repositório.

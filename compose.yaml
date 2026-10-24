@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: cpe
+      POSTGRES_USER: cpe
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cpe -d cpe"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  api:
+    build: .
+    environment:
+      DATABASE_URL: postgresql://cpe:${POSTGRES_PASSWORD}@db:5432/cpe
+      CPE_JWT_SECRET: ${CPE_JWT_SECRET:?Set CPE_JWT_SECRET in .env}
+      CPE_JWT_TTL_SECONDS: ${CPE_JWT_TTL_SECONDS:-3600}
+      CPE_RATE_LIMIT_PER_MINUTE: ${CPE_RATE_LIMIT_PER_MINUTE:-60}
+      CPE_ADMIN_BOOTSTRAP_TOKEN: ${CPE_ADMIN_BOOTSTRAP_TOKEN:?Set CPE_ADMIN_BOOTSTRAP_TOKEN in .env}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      CPE_OPENAI_MODEL: ${CPE_OPENAI_MODEL:-gpt-4.1-mini}
+    ports:
+      - "127.0.0.1:8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+    restart: unless-stopped
+volumes:
+  postgres_data:

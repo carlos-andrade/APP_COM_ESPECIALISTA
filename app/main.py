@@ -1,6 +1,6 @@
 """APP_COM_ESPECIALISTA MVP API."""
 import hashlib, hmac, json, os, secrets, sqlite3, time, base64
-from contextlib import contextmanager
+from contextlib import contextmanager, asynccontextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 from fastapi import FastAPI, Depends, HTTPException, Request, Response, Header
@@ -8,6 +8,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field, field_validator
 
 DB_PATH=os.getenv("CPE_DB_PATH","data/cpe.sqlite3")
+DATABASE_URL=os.getenv("DATABASE_URL","").strip()
 JWT_SECRET=os.getenv("CPE_JWT_SECRET","")
 JWT_TTL=int(os.getenv("CPE_JWT_TTL_SECONDS","3600"))
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY","")
@@ -16,14 +17,32 @@ ADMIN_BOOTSTRAP_TOKEN=os.getenv("CPE_ADMIN_BOOTSTRAP_TOKEN","")
 MAX_CHARS=8000
 RATE_LIMIT=int(os.getenv("CPE_RATE_LIMIT_PER_MINUTE","60"))
 bearer=HTTPBearer(auto_error=False)
-app=FastAPI(title="APP_COM_ESPECIALISTA API",version="1.0.0")
+@asynccontextmanager
+async def lifespan(app):
+ init_db()
+ if len(JWT_SECRET.encode())<32: raise RuntimeError("CPE_JWT_SECRET é obrigatório e deve ter pelo menos 32 bytes.")
+ yield
+app=FastAPI(title="APP_COM_ESPECIALISTA API",version="1.0.0",lifespan=lifespan)
 rate_buckets={}
 SPECIALISTS=[
  {"id":"general","version":"1.0.0","name":"Orientador Geral","domain":"general","description":"Clarificação de problemas e orientação geral.","status":"active","limits":["Não substitui aconselhamento profissional em áreas reguladas."]},
  {"id":"software","version":"1.0.0","name":"Especialista de Software","domain":"software","description":"Arquitetura, programação, testes e operações.","status":"active","limits":["Não executa ações externas sem autorização explícita."]},
 ]
 def now(): return datetime.now(timezone.utc).isoformat()
+class PostgresConnection:
+ def __init__(self,conn): self.conn=conn
+ def execute(self,sql,params=()): return self.conn.execute(sql.replace("?","%s"),params)
+ def executescript(self,sql):
+  for statement in sql.split(";"):
+   if statement.strip(): self.conn.execute(statement)
+ def commit(self): self.conn.commit()
+ def rollback(self): self.conn.rollback()
+ def close(self): self.conn.close()
 def connect():
+ if DATABASE_URL:
+  import psycopg
+  from psycopg.rows import dict_row
+  return PostgresConnection(psycopg.connect(DATABASE_URL,row_factory=dict_row))
  Path(DB_PATH).parent.mkdir(parents=True,exist_ok=True)
  c=sqlite3.connect(DB_PATH,timeout=10); c.row_factory=sqlite3.Row; c.execute("PRAGMA foreign_keys=ON"); return c
 @contextmanager
@@ -43,11 +62,8 @@ def init_db():
   CREATE INDEX IF NOT EXISTS idx_conversations_user ON conversations(user_id,updated_at);
   CREATE INDEX IF NOT EXISTS idx_messages_user ON messages(user_id,created_at);
   CREATE INDEX IF NOT EXISTS idx_memory_state ON curated_memory(state,specialist_id);
+  CREATE UNIQUE INDEX IF NOT EXISTS idx_single_admin ON users(role) WHERE role='admin';
   """)
-@app.on_event("startup")
-def startup():
- init_db()
- if len(JWT_SECRET.encode())<32: raise RuntimeError("CPE_JWT_SECRET é obrigatório e deve ter pelo menos 32 bytes.")
 def audit(actor,action,typ,rid=None,metadata=None):
  with db() as c: c.execute("INSERT INTO audit VALUES(?,?,?,?,?,?,?)",(secrets.token_hex(16),actor,action,typ,rid,json.dumps(metadata or {},ensure_ascii=False),now()))
 def password_hash(pw,salt=None):
@@ -83,10 +99,17 @@ def admin_user(u=Depends(current_user)):
 def bootstrap_admin(bootstrap_token:str=Header(default="",alias="X-Admin-Bootstrap-Token"),user=Depends(current_user)):
  if not ADMIN_BOOTSTRAP_TOKEN or not hmac.compare_digest(bootstrap_token,ADMIN_BOOTSTRAP_TOKEN):
   raise HTTPException(403,detail={"code":"ADMIN_BOOTSTRAP_DENIED","message":"Bootstrap administrativo inválido ou desativado."})
- with db() as c:
-  if c.execute("SELECT 1 FROM users WHERE role='admin' LIMIT 1").fetchone():
-   raise HTTPException(409,detail={"code":"ADMIN_ALREADY_EXISTS","message":"Já existe um administrador; bootstrap fechado."})
-  c.execute("UPDATE users SET role='admin' WHERE id=?",(user["id"],))
+ try:
+  with db() as c:
+   if c.execute("SELECT 1 FROM users WHERE role='admin' LIMIT 1").fetchone():
+    raise HTTPException(409,detail={"code":"ADMIN_ALREADY_EXISTS","message":"Já existe um administrador; bootstrap fechado."})
+   cur=c.execute("UPDATE users SET role='admin' WHERE id=? AND NOT EXISTS (SELECT 1 FROM users WHERE role='admin')",(user["id"],))
+   if cur.rowcount!=1:
+    raise HTTPException(409,detail={"code":"ADMIN_ALREADY_EXISTS","message":"Já existe um administrador; bootstrap fechado."})
+ except Exception as exc:
+  if isinstance(exc,sqlite3.IntegrityError) or getattr(exc,"sqlstate",None)=="23505":
+   raise HTTPException(409,detail={"code":"ADMIN_ALREADY_EXISTS","message":"Já existe um administrador; bootstrap fechado."}) from exc
+  raise
  audit(user["id"],"admin.bootstrap","user",user["id"])
  return {"status":"admin_created","user_id":user["id"],"note":"Obtenha um novo token para refletir o papel atualizado."}
 @app.middleware("http")
@@ -125,7 +148,10 @@ def register(body:RegisterIn):
  role="user"
  try:
   with db() as c: c.execute("INSERT INTO users(id,email,password_hash,role,created_at) VALUES(?,?,?,?,?)",(uid,body.email,password_hash(body.password),role,now()))
- except sqlite3.IntegrityError: raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."})
+ except Exception as exc:
+  if isinstance(exc,sqlite3.IntegrityError) or getattr(exc,"sqlstate",None)=="23505":
+   raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."}) from exc
+  raise
  audit(uid,"user.register","user",uid)
  return {"access_token":token_for(uid,role),"token_type":"bearer","expires_in":JWT_TTL}
 @app.post("/api/v1/auth/token")

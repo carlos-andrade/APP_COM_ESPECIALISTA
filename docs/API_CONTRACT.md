@@ -9,7 +9,7 @@
 | Fase | FASE_1_IMPLEMENTACAO_MVP |
 | Estado | EM_REVISAO |
 | Versão | 1.0.0 |
-| SHA-256 (conteúdo canónico) | PENDENTE_DE_VALIDACAO |
+| SHA-256 (conteúdo canónico) | 904be89c7aa3271be837cef284d1de02e58772dae92d56726ca73cf95cb1b259 |
 | Commit de referência (versão anterior) | N/A — documento novo |
 | Data de criação | 2026-10-24 |
 | Data de atualização | 2026-10-24 |
@@ -59,3 +59,8 @@ OpenAPI disponível em /openapi.json e versionado em openapi.yaml. Mudanças adi
 ## Limites do MVP
 
 Não aprovado para produção. SQLite, ausência de verificação de email, gestão simplificada de JWT, curadoria administrativa inicial e política provisória de retenção exigem revisão antes do piloto.
+
+
+## PostgreSQL
+
+A implementação suporta a variável `DATABASE_URL` e o compose de desenvolvimento. A implantação de referência usa PostgreSQL; o SQLite fica reservado a testes locais. A compatibilidade real deve ser comprovada por testes de integração contra PostgreSQL antes de declarar o contrato estável.

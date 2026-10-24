@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | 500f554cd1ae5d2594f536d79cb485b89a036e4edb0d879aecc75628c5bc4593 |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 4fae7cfefcbe74a4b586e1094bee77f1aded1303446e4007dd947bf6b4782fd6 |
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-24 |
@@ -65,5 +65,5 @@ Não declarar implementação, testes, segurança ou prontidão de produção se
 | CI | Bloqueada | Criação do workflow foi bloqueada pelo conector; sem execução verde |
 | Documentação | Em revisão | Cabeçalhos e hashes das novas versões precisam de validação; não marcar como APROVADO sem decisão explícita |
 | Segurança e privacidade | Pendente | Política de retenção/RGPD, revisão de autenticação, rate limit, eliminação e memória |
-| Cliente externo | Pendente | Exemplo Python existe; falta chamada real a ambiente implantado a partir de segundo repositório |
+| Cliente externo | Smoke test local passou | Cliente Python invocou por HTTP o catálogo e a triagem da API local; falta ambiente implantado e integração a partir de segundo repositório |
 | Piloto | NÃO AUTORIZADO | Depende do fecho verificável de todos os gates anteriores |

@@ -12,6 +12,7 @@ JWT_SECRET=os.getenv("CPE_JWT_SECRET","")
 JWT_TTL=int(os.getenv("CPE_JWT_TTL_SECONDS","3600"))
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY","")
 OPENAI_MODEL=os.getenv("CPE_OPENAI_MODEL","gpt-4.1-mini")
+ADMIN_EMAIL=os.getenv("CPE_ADMIN_EMAIL","").strip().lower()
 MAX_CHARS=8000
 RATE_LIMIT=int(os.getenv("CPE_RATE_LIMIT_PER_MINUTE","60"))
 bearer=HTTPBearer(auto_error=False)
@@ -111,11 +112,12 @@ def health(): return {"status":"ok","service":"APP_COM_ESPECIALISTA","api_versio
 @app.post("/api/v1/auth/register",status_code=201)
 def register(body:RegisterIn):
  uid=secrets.token_hex(16)
+ role="admin" if ADMIN_EMAIL and hmac.compare_digest(body.email,ADMIN_EMAIL) else "user"
  try:
-  with db() as c: c.execute("INSERT INTO users(id,email,password_hash,role,created_at) VALUES(?,?,?,?,?)",(uid,body.email,password_hash(body.password),"user",now()))
+  with db() as c: c.execute("INSERT INTO users(id,email,password_hash,role,created_at) VALUES(?,?,?,?,?)",(uid,body.email,password_hash(body.password),role,now()))
  except sqlite3.IntegrityError: raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."})
  audit(uid,"user.register","user",uid)
- return {"access_token":token_for(uid,"user"),"token_type":"bearer","expires_in":JWT_TTL}
+ return {"access_token":token_for(uid,role),"token_type":"bearer","expires_in":JWT_TTL}
 @app.post("/api/v1/auth/token")
 def login(body:LoginIn):
  with db() as c: u=c.execute("SELECT * FROM users WHERE email=?",(body.email.strip().lower(),)).fetchone()

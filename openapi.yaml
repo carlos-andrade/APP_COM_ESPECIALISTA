@@ -86,6 +86,63 @@ paths:
       summary: Eliminar conta e histórico
       responses:
         '204': {description: Conta eliminada}
+  /admin/bootstrap:
+    post:
+      summary: Promover a conta autenticada a administrador uma única vez
+      parameters:
+        - in: header
+          name: X-Admin-Bootstrap-Token
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Administrador inicial criado}
+        '403': {description: Segredo inválido}
+        '409': {description: Bootstrap já utilizado}
+  /specialists/{sid}:
+    get:
+      summary: Consultar especialista
+      parameters:
+        - in: path
+          name: sid
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Perfil do especialista}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /conversations/{cid}:
+    get:
+      summary: Consultar conversa própria e mensagens
+      parameters:
+        - in: path
+          name: cid
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Conversa própria}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /admin/memory:
+    get:
+      summary: Listar itens de memória pendentes
+      responses:
+        '200': {description: Itens pendentes}
+        '403': {description: Permissão administrativa necessária}
+  /admin/memory/{mid}/review:
+    post:
+      summary: Rever item de memória
+      parameters:
+        - in: path
+          name: mid
+          required: true
+          schema: {type: string}
+      responses:
+        '200': {description: Revisão registada}
+        '404': {$ref: '#/components/responses/NotFound'}
+  /admin/audit:
+    get:
+      summary: Consultar auditoria
+      responses:
+        '200': {description: Eventos de auditoria}
+        '403': {description: Permissão administrativa necessária}
 components:
   securitySchemes:
     bearerAuth: {type: http, scheme: bearer, bearerFormat: JWT}

@@ -32,7 +32,7 @@ Python 3.12 ou superior. Para conversas reais, uma chave válida do fornecedor d
 2. Instalar dependências com pip install -r requirements.txt.
 3. Definir CPE_JWT_SECRET com valor aleatório de pelo menos 32 bytes.
 4. Definir CPE_DB_PATH para uma localização gravável.
-5. Definir CPE_ADMIN_EMAIL antes de registar a conta administrativa inicial. Só o email configurado recebe o papel admin.
+5. Definir CPE_ADMIN_BOOTSTRAP_TOKEN como segredo aleatório separado. Registar uma conta normal, autenticar e chamar POST /api/v1/admin/bootstrap com o cabeçalho X-Admin-Bootstrap-Token. O bootstrap só funciona uma vez; depois remover a variável de ambiente e obter um novo token de acesso.
 6. Para conversas, definir OPENAI_API_KEY e, se necessário, CPE_OPENAI_MODEL.
 7. Executar uvicorn app.main:app --host 127.0.0.1 --port 8000.
 8. Consultar /docs, /openapi.json e /api/v1/health.

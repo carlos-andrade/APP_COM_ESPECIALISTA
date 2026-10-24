@@ -8,8 +8,8 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.6 |
-| **SHA-256 (conteúdo canónico)** | dcf44d69e9d4946d281c32225ec8f194766a9ceaa28ea5e6d9e8c89f489f38f9 |
+| **Versão** | 1.0.7 |
+| **SHA-256 (conteúdo canónico)** | 79eed01cce8d368026ddf7e8cb556fb6809542cf2a44a61439a8a7c6e790c384 |
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-24 |
@@ -134,4 +134,4 @@ Proposta arquitetural inicial; não constitui descrição de funcionalidades imp
 
 Foi incorporada uma implementação inicial FastAPI e existe suporte de ligação PostgreSQL através de DATABASE_URL no ramo de remediação, com Dockerfile, Compose e esquema inicial. A implantação PostgreSQL, execução de migrações, backup/restauro e testes de integração ainda não foram executados nem comprovados.
 
-A CI não está ativa, pois a criação de .github/workflows/ci.yml foi bloqueada pelo conector. Não declarar validação técnica completa nem prontidão de piloto até existirem execuções verdes e evidência independente dos gates de segurança.
+Os testes locais passaram (12 testes); a CI não está ativa, pois a criação de .github/workflows/ci.yml foi bloqueada pelo conector. Não declarar validação técnica completa nem prontidão de piloto até existirem execuções verdes e evidência independente dos gates de segurança.

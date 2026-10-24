@@ -8,11 +8,11 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | ffdcc4700ddd2a2e7310c7f01709d0f57dc575619a98b20d853d47dcf0a87c34 |
-| **Commit de referência (versão anterior)** | [e09a35601b240fd5019e996b426f0f2c4a57f74e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/e09a35601b240fd5019e996b426f0f2c4a57f74e) |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | dcf44d69e9d4946d281c32225ec8f194766a9ceaa28ea5e6d9e8c89f489f38f9 |
+| **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-23 |
+| **Data de atualização** | 2026-10-24 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Revisão documental do projeto; proposta arquitetural existente no repositório |
@@ -128,3 +128,10 @@ Todos os caminhos são conceptuais até à aprovação dos esquemas OpenAPI. O e
 ## Estado
 
 Proposta arquitetural inicial; não constitui descrição de funcionalidades implementadas.
+
+
+## Estado de implementação — 2026-10-24
+
+Foi incorporada uma implementação inicial FastAPI e existe suporte de ligação PostgreSQL através de DATABASE_URL no ramo de remediação, com Dockerfile, Compose e esquema inicial. A implantação PostgreSQL, execução de migrações, backup/restauro e testes de integração ainda não foram executados nem comprovados.
+
+A CI não está ativa, pois a criação de .github/workflows/ci.yml foi bloqueada pelo conector. Não declarar validação técnica completa nem prontidão de piloto até existirem execuções verdes e evidência independente dos gates de segurança.

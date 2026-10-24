@@ -8,11 +8,11 @@
 | **Tipo documental** | CARTA |
 | **Fase** | TRANSVERSAL |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | 508c6c9d6db28438083f674aec08608b5df41dc7516f74ac5acf05aa3bc7d484 |
-| **Commit de referência (versão anterior)** | [17d1c9c246a06c7eefd2c2aa3517b825291056d8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/17d1c9c246a06c7eefd2c2aa3517b825291056d8) |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | 6bf2f2cb388ddfb52fc582eb0859ce807d7032d38fffa80b5bd9b9163d33699d |
+| **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-23 |
+| **Data de atualização** | 2026-10-24 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Carta de princípios já registada no repositório do projeto |
@@ -102,3 +102,10 @@ Esta carta é um princípio transversal do produto. Todos os requisitos, perfis 
 **Regra do APP_COM_ESPECIALISTA:** todos os especialistas são agentes virtuais alimentados por IA e devem ser concebidos e avaliados segundo o padrão interno «PhD máximo» da sua especialidade, com rigor, profundidade, transparência sobre limitações e segurança.
 
 **Nota de estado:** esta carta regista a regra de produto. Não prova que os agentes já existam, que tenham sido treinados para todas as especialidades ou que tenham passado avaliações; esses resultados dependem de implementação e validação verificáveis.
+
+
+## Aplicação técnica e gates de segurança — 2026-10-24
+
+A primeira implementação de API e memória controlada foi incorporada no repositório. A aceitação de uma resposta cria um candidato pendente, não um conhecimento automaticamente aprovado; a reutilização deve limitar-se a itens revistos e aprovados. A execução de testes e a revisão de segurança não estão concluídas, e o piloto permanece não autorizado.
+
+O armazenamento de conversas, a curadoria, a retenção e a eliminação devem respeitar isolamento por utilizador, minimização de dados, direitos dos titulares e auditoria proporcional. Não se deve tratar o conteúdo de utilizadores como conhecimento partilhado sem aprovação de curadoria e base legal adequada.

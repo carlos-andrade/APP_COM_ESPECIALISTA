@@ -48,3 +48,6 @@ CREATE TABLE audit (
 CREATE INDEX idx_conversations_user ON conversations(user_id, updated_at);
 CREATE INDEX idx_messages_user ON messages(user_id, created_at);
 CREATE INDEX idx_memory_state ON curated_memory(state, specialist_id);
+
+-- Enforce exactly one admin role even under concurrent bootstrap requests.
+CREATE UNIQUE INDEX idx_single_admin ON users(role) WHERE role = 'admin';

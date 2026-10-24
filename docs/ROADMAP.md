@@ -8,11 +8,11 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.4 |
-| **SHA-256 (conteúdo canónico)** | e739d799818d353d1a70e5a13ce43c05f3f3c1e78a1d2b911a17ec4bcd6eb83a |
-| **Commit de referência (versão anterior)** | [0fec9ba5c774be56941c9d4221a7c6f2e492f1a8](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/0fec9ba5c774be56941c9d4221a7c6f2e492f1a8) |
+| **Versão** | 1.0.5 |
+| **SHA-256 (conteúdo canónico)** | 5b545c02996c8f28bc9c85f80e0792b42e6419f598c9a1efacdbaa08f19be8be |
+| **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-23 |
+| **Data de atualização** | 2026-10-24 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Revisão documental do projeto; roadmap existente no repositório |
@@ -53,3 +53,17 @@ Rever e aprovar formalmente a visão e os requisitos iniciais; em seguida decidi
 ## Regra de estado
 
 Não declarar implementação, testes, segurança ou prontidão de produção sem evidência verificável no repositório e/ou nos resultados de execução.
+
+
+## Atualização de execução — 2026-10-24
+
+| Frente | Estado | Evidência / bloqueio |
+|---|---|---|
+| Núcleo API | Implementação inicial integrada | PR #6 integrado em main; não representa aprovação de segurança |
+| PostgreSQL | Preparação no ramo de remediação | Dockerfile, compose.yaml, psycopg e esquema inicial adicionados; falta executar e validar |
+| Testes | Em validação | Testes adicionais escritos; execução real não comprovada |
+| CI | Bloqueada | Criação do workflow foi bloqueada pelo conector; sem execução verde |
+| Documentação | Em revisão | Cabeçalhos e hashes das novas versões precisam de validação; não marcar como APROVADO sem decisão explícita |
+| Segurança e privacidade | Pendente | Política de retenção/RGPD, revisão de autenticação, rate limit, eliminação e memória |
+| Cliente externo | Pendente | Exemplo Python existe; falta chamada real a ambiente implantado a partir de segundo repositório |
+| Piloto | NÃO AUTORIZADO | Depende do fecho verificável de todos os gates anteriores |

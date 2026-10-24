@@ -1,0 +1,108 @@
+openapi: 3.1.0
+info:
+  title: APP_COM_ESPECIALISTA API
+  version: 1.0.0
+  description: Contrato inicial v1; a aplicação FastAPI também publica /openapi.json.
+servers:
+  - url: https://api.example.invalid/api/v1
+security:
+  - bearerAuth: []
+paths:
+  /health:
+    get:
+      security: []
+      responses:
+        '200': {description: Serviço disponível}
+  /auth/register:
+    post:
+      security: []
+      summary: Criar conta e receber token
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/RegisterRequest'}
+      responses:
+        '201': {description: Conta criada}
+        '409': {$ref: '#/components/responses/Conflict'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+  /auth/token:
+    post:
+      security: []
+      summary: Autenticar e obter token Bearer
+      responses:
+        '200': {description: Token emitido}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /specialists:
+    get:
+      summary: Listar especialistas publicados
+      responses:
+        '200': {description: Catálogo}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+  /triage:
+    post:
+      summary: Triagem e encaminhamento
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/MessageRequest'}
+      responses:
+        '200': {description: Resultado de triagem}
+        '401': {$ref: '#/components/responses/Unauthorized'}
+        '422': {$ref: '#/components/responses/ValidationError'}
+  /conversations:
+    post:
+      summary: Criar conversa
+      responses:
+        '201': {description: Conversa criada}
+  /conversations/{cid}/messages:
+    post:
+      summary: Enviar mensagem
+      parameters:
+        - {in: path, name: cid, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/MessageRequest'}
+      responses:
+        '201': {description: Resposta gerada}
+        '404': {$ref: '#/components/responses/NotFound'}
+        '502': {description: Falha do fornecedor de IA}
+        '503': {description: Fornecedor não configurado}
+  /feedback:
+    post:
+      summary: Registar aceitação explícita; cria item pendente de curadoria
+      responses:
+        '200': {description: Feedback registado}
+  /me/export:
+    get:
+      summary: Exportar dados próprios
+      responses:
+        '200': {description: Exportação}
+  /me:
+    delete:
+      summary: Eliminar conta e histórico
+      responses:
+        '204': {description: Conta eliminada}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer, bearerFormat: JWT}
+  schemas:
+    RegisterRequest:
+      type: object
+      required: [email, password]
+      properties:
+        email: {type: string, format: email, maxLength: 254}
+        password: {type: string, minLength: 12, maxLength: 128}
+    MessageRequest:
+      type: object
+      required: [content]
+      properties:
+        content: {type: string, minLength: 1, maxLength: 8000}
+  responses:
+    Unauthorized: {description: Autenticação ausente ou inválida}
+    Conflict: {description: Conta já existente}
+    NotFound: {description: Recurso não encontrado no âmbito do utilizador}
+    ValidationError: {description: Pedido inválido}

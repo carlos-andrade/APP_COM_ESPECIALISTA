@@ -8,8 +8,8 @@
 | **Tipo documental** | PLANO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.5 |
-| **SHA-256 (conteúdo canónico)** | 5b545c02996c8f28bc9c85f80e0792b42e6419f598c9a1efacdbaa08f19be8be |
+| **Versão** | 1.0.6 |
+| **SHA-256 (conteúdo canónico)** | 500f554cd1ae5d2594f536d79cb485b89a036e4edb0d879aecc75628c5bc4593 |
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
 | **Data de atualização** | 2026-10-24 |
@@ -61,7 +61,7 @@ Não declarar implementação, testes, segurança ou prontidão de produção se
 |---|---|---|
 | Núcleo API | Implementação inicial integrada | PR #6 integrado em main; não representa aprovação de segurança |
 | PostgreSQL | Preparação no ramo de remediação | Dockerfile, compose.yaml, psycopg e esquema inicial adicionados; falta executar e validar |
-| Testes | Em validação | Testes adicionais escritos; execução real não comprovada |
+| Testes | Validação local básica passou | 12 testes passaram localmente; falta CI verde e integração PostgreSQL |
 | CI | Bloqueada | Criação do workflow foi bloqueada pelo conector; sem execução verde |
 | Documentação | Em revisão | Cabeçalhos e hashes das novas versões precisam de validação; não marcar como APROVADO sem decisão explícita |
 | Segurança e privacidade | Pendente | Política de retenção/RGPD, revisão de autenticação, rate limit, eliminação e memória |

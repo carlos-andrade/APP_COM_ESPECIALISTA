@@ -8,11 +8,11 @@
 | **Tipo documental** | ESPECIFICACAO |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.7 |
-| **SHA-256 (conteúdo canónico)** | 79eed01cce8d368026ddf7e8cb556fb6809542cf2a44a61439a8a7c6e790c384 |
+| **Versão** | 1.0.8
+| **SHA-256 (conteúdo canónico)** | a0a8eae587076959a9f06365bef4ebe73202d579a1caf7175a1a9409984f871c
 | **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-24 |
+| **Data de atualização** | 2026-10-24
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Revisão documental do projeto; proposta arquitetural existente no repositório |
@@ -135,3 +135,8 @@ Proposta arquitetural inicial; não constitui descrição de funcionalidades imp
 Foi incorporada uma implementação inicial FastAPI e existe suporte de ligação PostgreSQL através de DATABASE_URL no ramo de remediação, com Dockerfile, Compose e esquema inicial. A implantação PostgreSQL, execução de migrações, backup/restauro e testes de integração ainda não foram executados nem comprovados.
 
 Os testes locais passaram (12 testes); a CI não está ativa, pois a criação de .github/workflows/ci.yml foi bloqueada pelo conector. Não declarar validação técnica completa nem prontidão de piloto até existirem execuções verdes e evidência independente dos gates de segurança.
+
+
+## Sistema visual unificado iOS/Android — decisão de produto (2026-10-24)
+
+Direção aprovada pelo responsável em conversa e registada na [Issue #7](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/issues/7): um único sistema visual e funcional, com temas claro e escuro disponíveis em iOS e Android. Reutilizar tokens e componentes; adaptar navegação, áreas seguras, gestos e controlos às convenções nativas. Incluir contraste, texto escalável, leitores de ecrã e estados de carregamento/erro. Especificação detalhada: [Sistema visual unificado](SISTEMA_VISUAL_UNIFICADO_IOS_ANDROID.md). O documento está EM_REVISAO; não representa implementação concluída nem autorização de piloto.

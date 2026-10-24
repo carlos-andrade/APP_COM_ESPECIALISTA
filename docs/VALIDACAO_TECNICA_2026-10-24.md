@@ -8,7 +8,7 @@
 | Tipo documental | RELATORIO_VALIDACAO |
 | Fase | FASE_1_IMPLEMENTACAO_MVP |
 | Estado | EM_REVISAO |
-| Versão | 1.0.0 |
+| Versão | 1.0.1 |
 | SHA-256 (conteúdo canónico) | 68c7c6639d7691aa90fe5c1ae54839837acc59bbd65502f669a6f9542fedd07e |
 | Commit de referência (versão anterior) | N/A — documento novo |
 | Data de criação | 2026-10-24 |
@@ -27,6 +27,7 @@
 - **Testes:** `12 passed` com pytest.
 - **Compilação:** `python -m compileall -q app tests` passou.
 - **OpenAPI:** parse YAML válido para OpenAPI 3.1.0; 16 paths.
+- **Cliente HTTP externo:** executado o exemplo Python por HTTP contra a API local: registo HTTP 201, catálogo devolveu `general` e `software`, triagem devolveu `matched` com `software`.
 - **Ambiente:** Python 3.13.5, FastAPI e Pydantic instalados localmente.
 - **Código testado:** conteúdo de `app/main.py` e `tests/test_contracts.py` lido do ramo GitHub e executado numa cópia local. O clone direto do repositório falhou por indisponibilidade de DNS; por isso, não se declara que a suite foi executada por GitHub Actions.
 
@@ -55,7 +56,7 @@ Foram adicionados suporte de ligação através de `DATABASE_URL`, dependência 
 - Segurança: falta revisão independente de autenticação, gestão de tokens, bootstrap, rate limiting distribuído, abuso, logs, memória, retenção e eliminação.
 - Privacidade: política final de retenção, localização, direitos dos titulares e condições do fornecedor carecem de decisão e validação.
 - Contrato: o OpenAPI foi expandido e parseado, mas falta comparação automatizada integral com `/openapi.json` gerado pela aplicação.
-- Cliente externo: exemplo de cliente existe, mas não houve chamada a API implantada nem integração num segundo repositório.
+- Cliente externo: o exemplo foi exercitado contra servidor local por HTTP; falta implantar uma instância acessível e integrar/testar a partir de um segundo repositório.
 - Aprovação documental: versões alteradas permanecem `EM_REVISAO`; os hashes canónicos foram verificados, mas a aprovação formal destas novas versões não foi concedida.
 - Piloto: **NÃO AUTORIZADO** até prova e encerramento de todos os gates anteriores.
 

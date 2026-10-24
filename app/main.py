@@ -8,6 +8,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field, field_validator
 
 DB_PATH=os.getenv("CPE_DB_PATH","data/cpe.sqlite3")
+DATABASE_URL=os.getenv("DATABASE_URL","").strip()
 JWT_SECRET=os.getenv("CPE_JWT_SECRET","")
 JWT_TTL=int(os.getenv("CPE_JWT_TTL_SECONDS","3600"))
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY","")
@@ -23,7 +24,20 @@ SPECIALISTS=[
  {"id":"software","version":"1.0.0","name":"Especialista de Software","domain":"software","description":"Arquitetura, programação, testes e operações.","status":"active","limits":["Não executa ações externas sem autorização explícita."]},
 ]
 def now(): return datetime.now(timezone.utc).isoformat()
+class PostgresConnection:
+ def __init__(self,conn): self.conn=conn
+ def execute(self,sql,params=()): return self.conn.execute(sql.replace("?","%s"),params)
+ def executescript(self,sql):
+  for statement in sql.split(";"):
+   if statement.strip(): self.conn.execute(statement)
+ def commit(self): self.conn.commit()
+ def rollback(self): self.conn.rollback()
+ def close(self): self.conn.close()
 def connect():
+ if DATABASE_URL:
+  import psycopg
+  from psycopg.rows import dict_row
+  return PostgresConnection(psycopg.connect(DATABASE_URL,row_factory=dict_row))
  Path(DB_PATH).parent.mkdir(parents=True,exist_ok=True)
  c=sqlite3.connect(DB_PATH,timeout=10); c.row_factory=sqlite3.Row; c.execute("PRAGMA foreign_keys=ON"); return c
 @contextmanager
@@ -125,7 +139,10 @@ def register(body:RegisterIn):
  role="user"
  try:
   with db() as c: c.execute("INSERT INTO users(id,email,password_hash,role,created_at) VALUES(?,?,?,?,?)",(uid,body.email,password_hash(body.password),role,now()))
- except sqlite3.IntegrityError: raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."})
+ except Exception as exc:
+  if isinstance(exc,sqlite3.IntegrityError) or getattr(exc,"sqlstate",None)=="23505":
+   raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."}) from exc
+  raise
  audit(uid,"user.register","user",uid)
  return {"access_token":token_for(uid,role),"token_type":"bearer","expires_in":JWT_TTL}
 @app.post("/api/v1/auth/token")

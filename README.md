@@ -8,11 +8,11 @@
 | **Tipo documental** | README |
 | **Fase** | FASE_0_FUNDAMENTOS |
 | **Estado** | EM_REVISAO |
-| **Versão** | 1.0.8 |
-| **SHA-256 (conteúdo canónico)** | fbc957a7fdfd7b0366c58a09b7f932b096b459aff5acbbdc01beb0cf0cdfdc65 |
-| **Commit de referência (versão anterior)** | [145c92915751111d6a17cc4a8f9412a1af1fcf4f](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/145c92915751111d6a17cc4a8f9412a1af1fcf4f) |
+| **Versão** | 1.0.9 |
+| **SHA-256 (conteúdo canónico)** | bb5fb9ff64dbe4bbaee34a417b79a3ac748738594aa85dafc64b1098dc66dd64 |
+| **Commit de referência (versão anterior)** | [c95edcb2c49bde05bb60dd5d712898c14506508e](https://github.com/carlos-andrade/APP_COM_ESPECIALISTA/commit/c95edcb2c49bde05bb60dd5d712898c14506508e) |
 | **Data de criação** | 2026-10-23 |
-| **Data de atualização** | 2026-10-23 |
+| **Data de atualização** | 2026-10-24 |
 | **Responsável** | Proprietário do repositório APP_COM_ESPECIALISTA |
 | **Aprovador** | Pendente — não há aprovação formal do conteúdo documental registada |
 | **Origem** | Visão do produto e documentação inicial do projeto |
@@ -224,3 +224,11 @@ A aplicação do cabeçalho foi verificada nos seis documentos Markdown abrangid
 |---|---|---|---|---|
 | 1.0.1 | 2026-10-23 | Aplicação inicial do cabeçalho canónico | Responsável do projeto | Histórico Git |
 | 1.0.2 | 2026-10-23 | Sincronização final do README após normalização e validação dos hashes dos documentos | Responsável do projeto | Commit GitHub desta atualização |
+
+
+## Estado de execução do MVP — 2026-10-24
+
+- O núcleo inicial da API foi incorporado na branch principal através do PR #6. A integração no GitHub não equivale a aprovação de segurança ou de piloto.
+- O trabalho de remediação está no PR de seguimento a abrir, incluindo suporte de PostgreSQL, Docker Compose e testes adicionais.
+- A CI ainda não está ativa: a criação do ficheiro GitHub Actions foi bloqueada pelo conector. Não há execução verde comprovada.
+- A API e os documentos técnicos continuam em revisão. Não declarar piloto até concluir testes, revisão de segurança, política de retenção/RGPD, validação de hashes e chamada real de cliente externo.

@@ -3,7 +3,7 @@ import hashlib, hmac, json, os, secrets, sqlite3, time, base64
 from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
-from fastapi import FastAPI, Depends, HTTPException, Request, Response
+from fastapi import FastAPI, Depends, HTTPException, Request, Response, Header
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from pydantic import BaseModel, Field, field_validator
 
@@ -12,7 +12,7 @@ JWT_SECRET=os.getenv("CPE_JWT_SECRET","")
 JWT_TTL=int(os.getenv("CPE_JWT_TTL_SECONDS","3600"))
 OPENAI_API_KEY=os.getenv("OPENAI_API_KEY","")
 OPENAI_MODEL=os.getenv("CPE_OPENAI_MODEL","gpt-4.1-mini")
-ADMIN_EMAIL=os.getenv("CPE_ADMIN_EMAIL","").strip().lower()
+ADMIN_BOOTSTRAP_TOKEN=os.getenv("CPE_ADMIN_BOOTSTRAP_TOKEN","")
 MAX_CHARS=8000
 RATE_LIMIT=int(os.getenv("CPE_RATE_LIMIT_PER_MINUTE","60"))
 bearer=HTTPBearer(auto_error=False)
@@ -79,6 +79,16 @@ def current_user(creds:HTTPAuthorizationCredentials|None=Depends(bearer)):
 def admin_user(u=Depends(current_user)):
  if u["role"]!="admin": raise HTTPException(403,detail={"code":"AUTH_FORBIDDEN","message":"Permissão administrativa necessária."})
  return u
+@app.post("/api/v1/admin/bootstrap")
+def bootstrap_admin(bootstrap_token:str=Header(default="",alias="X-Admin-Bootstrap-Token"),user=Depends(current_user)):
+ if not ADMIN_BOOTSTRAP_TOKEN or not hmac.compare_digest(bootstrap_token,ADMIN_BOOTSTRAP_TOKEN):
+  raise HTTPException(403,detail={"code":"ADMIN_BOOTSTRAP_DENIED","message":"Bootstrap administrativo inválido ou desativado."})
+ with db() as c:
+  if c.execute("SELECT 1 FROM users WHERE role='admin' LIMIT 1").fetchone():
+   raise HTTPException(409,detail={"code":"ADMIN_ALREADY_EXISTS","message":"Já existe um administrador; bootstrap fechado."})
+  c.execute("UPDATE users SET role='admin' WHERE id=?",(user["id"],))
+ audit(user["id"],"admin.bootstrap","user",user["id"])
+ return {"status":"admin_created","user_id":user["id"],"note":"Obtenha um novo token para refletir o papel atualizado."}
 @app.middleware("http")
 async def limit_requests(request:Request,call_next):
  rid=request.headers.get("X-Request-ID",secrets.token_hex(12))[:128]
@@ -112,7 +122,7 @@ def health(): return {"status":"ok","service":"APP_COM_ESPECIALISTA","api_versio
 @app.post("/api/v1/auth/register",status_code=201)
 def register(body:RegisterIn):
  uid=secrets.token_hex(16)
- role="admin" if ADMIN_EMAIL and hmac.compare_digest(body.email,ADMIN_EMAIL) else "user"
+ role="user"
  try:
   with db() as c: c.execute("INSERT INTO users(id,email,password_hash,role,created_at) VALUES(?,?,?,?,?)",(uid,body.email,password_hash(body.password),role,now()))
  except sqlite3.IntegrityError: raise HTTPException(409,detail={"code":"USER_EXISTS","message":"Já existe uma conta com este email."})
